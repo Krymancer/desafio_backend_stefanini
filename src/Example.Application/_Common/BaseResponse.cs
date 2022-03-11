@@ -1,4 +1,4 @@
-﻿namespace Example.Application.Common
+﻿namespace Crud.Application.Common
 {
     public abstract class BaseResponse
     {
