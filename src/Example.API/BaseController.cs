@@ -1,8 +1,8 @@
-﻿using Example.Application.Common;
+﻿using Crud.Application.Common;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace Example.API
+namespace Crud.API
 {
     public abstract class BaseController : ControllerBase
     {

@@ -1,5 +1,6 @@
-using Example.Application.ExampleService.Service;
-using Example.Infra.Data;
+using Crud.Application.CityService.Service;
+using Crud.Application.PersonService.Service;
+using Crud.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,8 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IExampleService, ExampleService>();
-builder.Services.AddDbContext<ExampleContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -26,7 +28,8 @@ if (app.Environment.IsDevelopment())
 
 using (var scope = app.Services.CreateScope())
 {
-    var dataContext = scope.ServiceProvider.GetRequiredService<ExampleContext>();
+    Console.WriteLine("Migrating...");
+    var dataContext = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
     dataContext.Database.Migrate();
 }
 
