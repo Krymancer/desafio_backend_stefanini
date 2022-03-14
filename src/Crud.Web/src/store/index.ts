@@ -18,29 +18,10 @@ export interface State {
 
 export const key: InjectionKey<Store<State>> = Symbol();
 
-async function getData() {
-  const personsData = await axios({
-    method: "GET",
-    url: `${endpoint}Person`,
-  });
-
-  const citiesData = await axios({
-    method: "GET",
-    url: `${endpoint}City`,
-  });
-
-  const persons = personsData.data.persons;
-  const cities = citiesData.data.cities;
-
-  return [persons, cities];
-}
-
-const [persons, cities] = await getData();
-
 export const store = createStore<State>({
   state: {
-    persons: persons,
-    cities: cities,
+    persons: [],
+    cities: [],
     cityModal: false,
     personModal: false,
     editFlag: false,

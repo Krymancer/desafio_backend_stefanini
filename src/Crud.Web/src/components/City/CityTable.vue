@@ -50,11 +50,7 @@ export default defineComponent({
 
       const mp = this.store.state.cities;
 
-      const np = mp.map((item) => {
-        if (item.id !== id) {
-          return item;
-        }
-      });
+      const np = mp.filter((item) => item.id !== id);
 
       console.log(np);
 

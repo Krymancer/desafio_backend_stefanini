@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+import axios from "axios";
 import { defineComponent } from "@vue/runtime-core";
 import PersonTable from "./PersonTable.vue";
 import PersonModal from "./PersonModal.vue";
@@ -14,6 +15,14 @@ import { useStore } from "../../store";
 import { mapGetters } from "vuex";
 
 export default defineComponent({
+  async onMounted() {
+    const response = await axios({
+      method: "GET",
+      url: "http://localhost:52374/api/Person",
+    });
+
+    this.store.commit("setPersons", response.data.persons);
+  },
   setup() {
     const store = useStore();
     return {

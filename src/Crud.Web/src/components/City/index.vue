@@ -12,8 +12,17 @@ import CityTable from "./CityTable.vue";
 import CityModal from "./CityModal.vue";
 import { useStore } from "../../store";
 import { mapGetters } from "vuex";
+import axios from "axios";
 
 export default defineComponent({
+  async onMounted() {
+    const response = await axios({
+      method: "GET",
+      url: "http://localhost:52374/api/City",
+    });
+
+    this.store.commit("setCities", response.data.cities);
+  },
   setup() {
     const store = useStore();
     return {
