@@ -7,6 +7,7 @@
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>example.api</DockerServiceName>
+    <DockerComposeProjectsToIgnore>src/Curd.Web/Crud.Web.njsproj</DockerComposeProjectsToIgnore>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

@@ -17,6 +17,13 @@ builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddDbContext<DatabaseContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
+}));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +39,8 @@ using (var scope = app.Services.CreateScope())
     var dataContext = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
     dataContext.Database.Migrate();
 }
+
+app.UseCors("corsapp");
 
 app.UseAuthorization();
 

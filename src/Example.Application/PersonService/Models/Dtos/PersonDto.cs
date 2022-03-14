@@ -1,4 +1,5 @@
-﻿using Crud.Domain.PersonAggregate;
+﻿using Crud.Domain.CityAggregate;
+using Crud.Domain.PersonAggregate;
 
 namespace Crud.Application.PersonService.Models.Dtos
 {
@@ -9,6 +10,7 @@ namespace Crud.Application.PersonService.Models.Dtos
         public string CPF { get; set; }
         public int Age { get; set; }
         public Guid CityId { get; set; }
+        public City City { get; set; }
 
         public static explicit operator PersonDto(Person c)
         {
@@ -19,6 +21,7 @@ namespace Crud.Application.PersonService.Models.Dtos
                 CPF = c.CPF,
                 Age = c.Age,
                 CityId = c.CityId,
+                City = c.City,
             };
         }
     }
