@@ -3,7 +3,7 @@ import { InjectionKey } from "vue";
 import { createStore, Store, useStore as baseUseStore } from "vuex";
 import { City, Person } from "../types";
 
-const endpoint = "http://localhost:52374/api/";
+const endpoint = "http://localhost:52415/api/";
 
 export interface State {
   persons: Person[];

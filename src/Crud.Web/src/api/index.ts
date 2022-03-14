@@ -1,5 +1,5 @@
 import axios, { Method, AxiosResponse } from "axios";
-const endpoint = "http://localhost:52374/api";
+const endpoint = "http://localhost:52415/api";
 
 const api = axios.create({
   baseURL: endpoint,

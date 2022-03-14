@@ -32,6 +32,7 @@ import axios from "axios";
 import { Person } from "../../types";
 
 export default defineComponent({
+  async mounted() {},
   setup() {
     const store = useStore();
     return {
@@ -52,7 +53,7 @@ export default defineComponent({
     async remove(id: string) {
       await axios({
         method: "DELETE",
-        url: `http://localhost:52374/api/Person/${id}`,
+        url: `http://localhost:52415/api/Person/${id}`,
       });
 
       const mp = this.store.state.persons;

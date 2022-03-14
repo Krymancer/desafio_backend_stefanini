@@ -57,7 +57,7 @@ export default defineComponent({
       if (this.editFlag) {
         await axios({
           method: "PUT",
-          url: `http://localhost:52374/api/City/${this.editId}`,
+          url: `http://localhost:52415/api/City/${this.editId}`,
           data,
         });
 
@@ -83,7 +83,7 @@ export default defineComponent({
       } else {
         const response = await axios({
           method: "POST",
-          url: "http://localhost:52374/api/City",
+          url: "http://localhost:52415/api/City",
           data,
         });
 

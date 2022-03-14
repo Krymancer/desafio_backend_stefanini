@@ -15,10 +15,10 @@ import { useStore } from "../../store";
 import { mapGetters } from "vuex";
 
 export default defineComponent({
-  async onMounted() {
+  async mounted() {
     const response = await axios({
       method: "GET",
-      url: "http://localhost:52374/api/Person",
+      url: "http://localhost:52415/api/Person",
     });
 
     this.store.commit("setPersons", response.data.persons);

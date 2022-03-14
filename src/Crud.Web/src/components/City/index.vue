@@ -15,12 +15,12 @@ import { mapGetters } from "vuex";
 import axios from "axios";
 
 export default defineComponent({
-  async onMounted() {
+  async mounted() {
     const response = await axios({
       method: "GET",
-      url: "http://localhost:52374/api/City",
+      url: "http://localhost:52415/api/City",
     });
-
+    //
     this.store.commit("setCities", response.data.cities);
   },
   setup() {
