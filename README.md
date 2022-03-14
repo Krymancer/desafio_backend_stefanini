@@ -6,7 +6,7 @@ Swagger URL:
 
     http://localhost:5000/swagger/
 
-Fontend URL:
+Frontend URL:
 
     http://localhost:8080/
 
