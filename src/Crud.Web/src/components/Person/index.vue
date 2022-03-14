@@ -18,7 +18,7 @@ export default defineComponent({
   async mounted() {
     const response = await axios({
       method: "GET",
-      url: "http://localhost:52415/api/Person",
+      url: "http://localhost:5000/api/Person",
     });
 
     this.store.commit("setPersons", response.data.persons);

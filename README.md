@@ -1,5 +1,15 @@
 # Desafio para candidatos da Stefanini
 
+# Info:
+
+Swagger URL:
+
+    http://localhost:5000/swagger/
+
+Fontend URL:
+
+    http://localhost:8080/
+
 # Requisitos:
 
 - [x] API .NET Core
@@ -17,5 +27,3 @@ Devido a problemas pessoas que expliquei no email so pude dedicar algumas horas 
 - [ ] Validação (Utilizando FluentValidation talvez)
 - [ ] CI/CD no Github para deploy automatico
 - [ ] Criar uma estrutura para a atomicidade das configurações de contraints e relações para cada entidades.
-
-Fora isso eu não conseguir evitar que o Visual Studio mudasse a servicePort do docker o que acaba fazendo com que a API mude de porta a toda build do zero dos containers

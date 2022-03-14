@@ -45,7 +45,7 @@ export default defineComponent({
     async remove(id: string) {
       await axios({
         method: "DELETE",
-        url: `http://localhost:52415/api/City/${id}`,
+        url: `http://localhost:5000/api/City/${id}`,
       });
 
       const mp = this.store.state.cities;
